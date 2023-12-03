@@ -5,7 +5,6 @@ import java.util.*;
 public class GearStarRatio {
     private List<String> inputs;
     private List<StarLocation> starLocations;
-    private List<Integer> numbers;
 
     public GearStarRatio(String input) {
         inputs = List.of(input.split("\n"));
@@ -27,6 +26,7 @@ public class GearStarRatio {
             List<DigitsLocation> neighbors = getNeighbors(starLocation);
             Set<Integer> numbersToMultiply = findNumbers(neighbors);
             System.out.println(numbersToMultiply.toString());
+            // multiply them and sum its results
             if (numbersToMultiply.size() == 2) {
                 List<Integer> integers = numbersToMultiply.stream().toList();
                 sum += integers.get(0) * integers.get(1);
